@@ -10,7 +10,7 @@ app.config(function($routeProvider) {
     controller: "LoginCtrl",
     templateUrl: "templates/login.html"
   })
-<<<<<<< HEAD
+
   $routeProvider.when("/user", {
     controller: "UserCtrl",
     templateUrl: "templates/user.html"
@@ -23,21 +23,6 @@ app.config(function($routeProvider) {
     controller: "ProjectCtrl",
     templateUrl: "templates/project.html"
   })
-
-=======
-  // $routeProvider.when("/user", {
-  //   controller: "UserCtrl",
-  //   templateUrl: "templates/user.html"
-  // })
-  // $routeProvider.when("/create", {
-  //   controller: "CreateCtrl",
-  //   templateUrl: "templates/create.html"
-  // })
-  // $routeProvider.when("/project", {
-  //   controller: "ProjectCtrl",
-  //   templateUrl: "templates/project.html"
-  // })
->>>>>>> master
 });
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
@@ -71,37 +56,6 @@ app.controller("FeedCtrl", function(
       $location.path("/login");
     }
   });
-
-app.controller("createPJCtrl", function($scope, $location, $firebaseAuth) {
-  var auth = $firebaseAuth();
-
-
-  // var propRef = firebase.database().ref().child("props");
-  // var bruRef = firebase.database().ref().child("brus");
-  // $scope.props = $firebaseArray(propRef);
-  // $scope.brus = $firebaseArray(bruRef);
-  // $scope.newProp = {};
-
-  // When I send:
-  // - Check sentiment API
-  // - Make sure there's a prop
-  // - Make sure I'm not the receiver
-
-  // $scope.addProp = function() {
-  //   $scope.successMessage = "";
-  //   $scope.errorMessage = "";
-  //   if ($scope.newProp.text && $scope.newProp.receiver) {
-  //     console.log($scope.newProp);
-  //     $scope.props.$add($scope.newProp);
-  //     $scope.newProp = {};
-  //     $scope.successMessage = "Nice! You contributed to the positivity of the world."
-  //     $timeout(function() {
-  //       $scope.successMessage = "";
-  //     }, 3000);
-  //   } else {
-  //     $scope.errorMessage = "Please make sure to choose a receiver, and add some positive text!"
-  //   }
-  // }
 
   $scope.logout = function() {
     auth.$signOut();
