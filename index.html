@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Join On</title>
+  <title>JoinOn</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="./style.css">
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
@@ -25,7 +25,15 @@
   <div class="container">
     <div class="col-md-6 col-md-offset-3">
       <div class="wrapper">
-        <div ng-view></div>
+        <div class="row" class="nav"></div>
+          <div class="col-xs-9" class="logo">JoinOn</div>
+          <div class="col-xs-2"> 
+            <a href="#/" class="navlink">Projects</a>
+          </div>
+          <div class="col-xs-1">
+            <a href="#/user" class="navlink">Me</a>
+          </div>
+          <div ng-view></div>
       </div>
     </div>
   </div>
