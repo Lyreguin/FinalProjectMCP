@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>JoinOn</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="./style.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
@@ -20,19 +22,14 @@
   firebase.initializeApp(config);
   </script>
   <script src="./script.js"></script>
+  <!--Links to Fonts-->
+  
+
 </head>
 <body ng-app="JoinOn">
   <div class="container">
     <div class="col-md-6 col-md-offset-3">
       <div class="wrapper">
-        <div class="row" class="nav"></div>
-          <div class="col-xs-9" class="logo">JoinOn</div>
-          <div class="col-xs-2"> 
-            <a href="#/" class="navlink">Projects</a>
-          </div>
-          <div class="col-xs-1">
-            <a href="#/user" class="navlink">Me</a>
-          </div>
           <div ng-view></div>
       </div>
     </div>

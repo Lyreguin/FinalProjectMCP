@@ -44,9 +44,17 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
 
 app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
 
-  $scope.logout = function() 
-  {
+  $scope.logout = function() {
   	auth.$signOut();
   	$location.path("/login");
   }
@@ -55,12 +63,54 @@ app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
 
 app.controller("UserCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
 });
 
 app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
+
 });
 
 app.controller("ProjectCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
 });
