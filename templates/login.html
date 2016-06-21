@@ -19,10 +19,13 @@
 </div>
 
 
+<div class="row">
+	<div class="col-xs-12">
+		<p>Login</p>
+		<p class="error">{{error}}</p>
+		<p class="message">{{message}}</p>
 
-<p>Login</p>
-<p class="error">{{error}}</p>
-<p class="message">{{message}}</p>
-
-<button ng-click="signIn()">Sign in with Facebook!</button>
-<div ng-show="firebaseUser">uid: {{firebaseUser.uid}}</div>
+		<button ng-click="signIn()">Sign in with Facebook!</button>
+		<div ng-show="firebaseUser">uid: {{firebaseUser.uid}}</div>
+	</div>
+</div>
