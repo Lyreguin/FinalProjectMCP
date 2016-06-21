@@ -10,6 +10,10 @@ app.config(function($routeProvider) {
     controller: "LoginCtrl",
     templateUrl: "templates/login.html"
   })
+  $routeProvider.when("/user", {
+    controller: "UserCtrl",
+    templateUrl: "templates/user.html"
+  })
   $routeProvider.when("/create", {
     controller: "CreateCtrl",
     templateUrl: "templates/create.html"
@@ -18,15 +22,8 @@ app.config(function($routeProvider) {
     controller: "ProjectCtrl",
     templateUrl: "templates/project.html"
   })
-  $routeProvider.when("/user", {
-    controller: "UserCtrl",
-    templateUrl: "templates/user.html"
-  })
-});
 
-// - Redirect to Feed if I'm already logged in
-// - Feed to redirect to login if I'm not logged in
-// - Prevent me sending a prop to myself
+});
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
