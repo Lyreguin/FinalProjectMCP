@@ -64,3 +64,8 @@ app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
 app.controller("ProjectCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
 });
+
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Abel::latin' ] }
+  };

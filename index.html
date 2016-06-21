@@ -18,6 +18,7 @@
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
   <script>
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAbdI6wkXPt3wC-mU4XJV3-wO5kLlrNUCk",
@@ -46,3 +47,13 @@
     </div>
   </div>
 </body>
+
+<!-- filtering an array based on user input
+<div ng-app="JoinOn" ng-controller="ProjCtrl">
+<p><input type="text" ng-model="test"></p>
+<ul>
+  <li ng-repeat="x in Projects | filter: test">
+    {{x}}
+  </li>
+</ul>
+</div> --> 
