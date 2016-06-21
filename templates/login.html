@@ -1,24 +1,22 @@
-<div class="row" class="nav">
-  <div class="col-xs-8" class="logo">JoinOn</div>
+<div class="row nav">
+  <div class="col-xs-8 logo">JoinOn</div>
   <div class="col-xs-2"> 
-    <button class="btn btn-default" type="button">
+    <button class="btn btn-default navlink" type="button">
       <a href="#/" class="navlink">Projects</a>
     </button>
   </div>
   <div class="col-xs-2">
     <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      <button class="btn btn-default dropdown-toggle navlink" type="button" data-toggle="dropdown">
         Me<span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu dropdown-menu-right">
         <li><a href="#/user">My Projects</a></li>
         <li><a href="#" ng-click="logout()">Log Out</a></li>
       </ul>
     </div>
   </div>
 </div>
-
-
 
 <p>Login</p>
 <p class="error">{{error}}</p>
