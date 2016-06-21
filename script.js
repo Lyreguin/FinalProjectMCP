@@ -2,14 +2,15 @@ var app = angular.module("FinalProjectMCP", ["ngRoute", "firebase"]);
 var FinalProjectMCP_TOKEN = "f444ad30cdb55c1a02f067643242cfba";
 
 app.config(function($routeProvider) {
-  $routeProvider.when("/", {
-    controller: "FeedCtrl",
-    templateUrl: "templates/feed.html"
-  })
+  // $routeProvider.when("/", {
+  //   controller: "FeedCtrl",
+  //   templateUrl: "templates/feed.html"
+  // })
   $routeProvider.when("/login", {
     controller: "LoginCtrl",
     templateUrl: "templates/login.html"
   })
+<<<<<<< HEAD
   $routeProvider.when("/user", {
     controller: "UserCtrl",
     templateUrl: "templates/user.html"
@@ -23,6 +24,20 @@ app.config(function($routeProvider) {
     templateUrl: "templates/project.html"
   })
 
+=======
+  // $routeProvider.when("/user", {
+  //   controller: "UserCtrl",
+  //   templateUrl: "templates/user.html"
+  // })
+  // $routeProvider.when("/create", {
+  //   controller: "CreateCtrl",
+  //   templateUrl: "templates/create.html"
+  // })
+  // $routeProvider.when("/project", {
+  //   controller: "ProjectCtrl",
+  //   templateUrl: "templates/project.html"
+  // })
+>>>>>>> master
 });
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
