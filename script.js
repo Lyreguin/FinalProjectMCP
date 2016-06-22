@@ -48,7 +48,7 @@ app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
       $scope.firebaseUser = firebaseUser;
-      console.'log(firebaseUser);
+      console.log(firebaseUser);
     } 
     else {
       $location.path("/login");
