@@ -1,25 +1,45 @@
-<img ng-src="{{firebaseUser.photoURL}}" alt="">
-<h2>Feed {{firebaseUser.displayName}}</h2>
-<a href="#/me">View Projects</a>
-<a ng-click="logout()">Logout</a> 
-<div class="alert alert-success" ng-show="successMessage">{{successMessage}}</div>
-<div class="alert alert-danger" ng-show="errorMessage">{{errorMessage}}</div>
-<textarea class="form-control" placeholder="Type something positive here :)" ng-model="newProp.text"></textarea>
-<div class="row">
-  <div class="col-md-4">
-<!--     <select ng-model="newProp.receiver" ng-options="bru as bru.first_name for bru in brus" class="form-control"></select>
+<div class="row nav">
+  <div class="col-xs-8 logo">JoinOn</div>
+  <div class="col-xs-2"> 
+    <form action="#/" >
+    	<button type="submit" class="btn btn-default navlink">
+    		Browse
+    	</button>
+		</form>
   </div>
-  <div class="col-md-4">
-    <div class="btn btn-info" ng-click="addProj()">Validate and send!</div>
-  </div>
-</div> -->
-
-<div class="props-feed">
-  <div class="prop" ng-repeat="prop in props">
-    <p>{{prop.text}}</p>
-    <div>
-      <small>Positivity: {{prop.positivity_score}}</small>
+  <div class="col-xs-2">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle navlink" type="button" data-toggle="dropdown">
+        Me <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#/user">My Projects</a></li>
+        <li><a href="#" ng-click="logout()">Log Out</a></li>
+      </ul>
     </div>
-    <small>To: {{prop.receiver.first_name}}</small>
   </div>
+</div>
+<!--Above is Navbar Stuff, Don't Modify-->
+
+<div class="row content text-center">	
+	<div class="col-xs-5">	
+		<form action="#/create" >
+    	<button type="submit" class="btn btn-warning">
+    		Post Your Own Project
+    	</button>
+		</form>
+	</div>
+
+	<div class="col-xs-7">	
+			<input type="text" placeholder="Search" class="search-bar">
+	</div>
+
+</div>
+<div class="row content text-center">	
+	<div class="col-xs-12">	PROJECTS </div>
+</div>
+<div class="row content text-center">	
+	<div class="col-xs-12">
+	
+	</div>
 </div>

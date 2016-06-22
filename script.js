@@ -2,16 +2,15 @@ var app = angular.module("FinalProjectMCP", ["ngRoute", "firebase"]);
 var FinalProjectMCP_TOKEN = "f444ad30cdb55c1a02f067643242cfba";
 
 app.config(function($routeProvider) {
-  // $routeProvider.when("/", {
-  //   controller: "FeedCtrl",
-  //   templateUrl: "templates/feed.html"
-  // })
+  $routeProvider.when("/", {
+    controller: "FeedCtrl",
+    templateUrl: "templates/feed.html"
+  })
   $routeProvider.when("/login", {
     controller: "LoginCtrl",
     templateUrl: "templates/login.html"
   })
-
-  $routeProvider.when("/user", {
+$routeProvider.when("/user", {
     controller: "UserCtrl",
     templateUrl: "templates/user.html"
   })
@@ -44,15 +43,69 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
   }
 });
 
-app.controller("FeedCtrl", function(
-  $scope, $http, $location, $firebaseAuth, $firebaseArray, $timeout) {
+app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
+  var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.'log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
+
+});
+
+app.controller("UserCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
       $scope.firebaseUser = firebaseUser;
       console.log(firebaseUser);
-    } else {
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
+});
+
+app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
+  var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
       console.log(firebaseUser);
+    } 
+    else {
+      $location.path("/login");
+    }
+  });
+  $scope.logout = function() {
+  	auth.$signOut();
+  	$location.path("/login");
+  }
+
+});
+
+app.controller("ProjectCtrl", function($scope, $location, $firebaseAuth) {
+  var auth = $firebaseAuth();
+  auth.$onAuthStateChanged(function(firebaseUser) {
+    if (firebaseUser) {
+      $scope.firebaseUser = firebaseUser;
+      console.log(firebaseUser);
+    } 
+    else {
       $location.path("/login");
     }
   });

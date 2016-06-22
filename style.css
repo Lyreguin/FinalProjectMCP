@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+body {
+ 	font-family: 'Abel', sans-serif;
+}	
+
+.nav {
+	margin-top: 5px;
+	padding-top: 5px;
+	border: 2px solid grey;
+	background: antiquewhite;
+	border-radius: 2px;
+}
+
+.logo {
+	font-size: 1.9em;
+	font-weight: bold;
+}
+
+.navlink {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.search-bar {
+	width: 100%;
+}
+
+.create-button {
+	width: 100%;
+}

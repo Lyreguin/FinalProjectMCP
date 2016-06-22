@@ -1,0 +1,34 @@
+<div class="row nav">
+  <div class="col-xs-8 logo">JoinOn</div>
+  <div class="col-xs-2"> 
+    <button class="btn btn-default navlink" type="button">
+      <a href="#/" class="navlink">Projects</a>
+    </button>
+  </div>
+  <div class="col-xs-2">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle navlink" type="button" data-toggle="dropdown">
+        Me<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#/user">My Projects</a></li>
+        <li><a href="#" ng-click="logout()">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="col-xs-12">      
+    <h1>Create a New Project</h1>
+    <h2>Project Name </h2>
+    <textarea rows="4" cols="50" class="createNameControl" placeholder="What's your project called?" ng-model="projectName"></textarea>
+    <h2>Project Summary</h2>
+    <textarea rows="4" cols="150" class="projectSummary-control" placeholder="Let's get into the nitty gritty. Type for 2 minutes straight about what your project is, from what you'd like to accomplish, skills needed, timeline--EVERYTHING." ng-model="projectSummaru"></textarea>
+    <h2>Collaborators</h2>
+  <!-- add people via email so that they can receive project inviation via email and sign up as well -->
+  <!-- link the javascript so that it looks for commas in the string and find out how to send emails lol wtf-->
+    <textarea rows="4" cols="150" class="projectSummary-control" placeholder="Add your bright, like-minded friends via email!. They'll get an invitation to sign up and be able to accept this invitation so you can start working" ng-model="projectCollaborators"></textarea>
+    <div class="btn btn-info" ng-click="addProp()">Submit!</div>
+  </div>
+</div>
