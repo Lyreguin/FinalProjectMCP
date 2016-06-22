@@ -42,7 +42,7 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth) {
   }
 });
 
-app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
+app.controller("FeedCtrl", function($scope, $location, $firebaseAuth, $firebaseArray, $firebaseObject) {
   var auth = $firebaseAuth();
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
@@ -58,6 +58,11 @@ app.controller("FeedCtrl", function($scope, $location, $firebaseAuth) {
   	auth.$signOut();
   	$location.path("/login");
   }
+
+  //Feed Content
+  var projRef = firebase.database().ref().child("projects");
+  
+
 
 });
 
