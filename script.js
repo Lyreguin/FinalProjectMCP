@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
     templateUrl: "templates/user.html"
   })
   $routeProvider.when("/create", {
-    controller: "CreateCtrl",
+    controller: "CreateCtrl"
     templateUrl: "templates/create.html"
   })
   $routeProvider.when("/project", {
@@ -57,8 +57,34 @@ app.controller("UserCtrl", function($scope, $location, $firebaseAuth) {
   var auth = $firebaseAuth();
 });
 
-app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
+app.controller("CreateCtrl", function($scope, $location, $firebaseAuth, $firebaseArray) {
   var auth = $firebaseAuth();
+  var projectRef = firebase.database().ref().child("projects");
+  $scope.projects = $firebaseArray(projectRef);
+  
+
+    $scope.addPJ = function() {
+
+    $scope.errorMessage = "";
+    
+    if ($scope.projectName && $scope.projectSummary && $scope.projectCollaborators) {
+      console.log($scope.projectName);
+      $scope.project.$add($scope.projectName);
+      $scope.projectName = {};
+      
+    } else {
+      $scope.errorMessage = "Sorry, something went wrong--try submitting again and make sure all fields are complete."
+    }
+  }
+  
+
+  $scope.projectCollaborators 
+  $scope.addPJ = function() {
+    console.log($scope.();
+  }
+
+
+
 });
 
 app.controller("ProjectCtrl", function($scope, $location, $firebaseAuth) {
