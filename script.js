@@ -61,7 +61,7 @@ app.controller("FeedCtrl", function($scope, $location, $firebaseAuth, $firebaseA
 
   //Feed Content
   var projRef = firebase.database().ref().child("projects");
-  
+
 
 
 });
@@ -84,12 +84,15 @@ app.controller("UserCtrl", function($scope, $location, $firebaseAuth) {
   }
 });
 
-app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
+app.controller("CreateCtrl", function($scope, $location, $firebaseAuth, $firebaseArray) {
   var auth = $firebaseAuth();
+ 	var userID = "";
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
       $scope.firebaseUser = firebaseUser;
       console.log(firebaseUser);
+      userID = firebaseUser.uid;
+      console.log(userID);
     } 
     else {
       $location.path("/login");
@@ -100,6 +103,18 @@ app.controller("CreateCtrl", function($scope, $location, $firebaseAuth) {
   	$location.path("/login");
   }
 
+  var projRef = firebase.database().ref().child("projects");
+  $scope.projects = $firebaseArray(projRef);
+  $scope.newProj = {};
+  
+
+  $scope.addProj = function() {
+  	if ($scope.newProj.name && $scope.newProj.text) {
+  		$scope.newProj.uid = userID;
+      console.log($scope.newProj);
+      $scope.projects.$add($scope.newProj);
+  	}
+  }
 });
 
 app.controller("ProjectCtrl", function($scope, $location, $firebaseAuth) {
